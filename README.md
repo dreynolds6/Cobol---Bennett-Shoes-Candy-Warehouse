@@ -98,14 +98,14 @@ Inventory report:  Produces a listing of the file contents with sub-totals by be
     -	CANDY ID
 
 Inventory ID conversions for reporting:
-•	Vendor ID: A-Atomic Sweets, B - Boston Sweets, N-Nellies Sweet Shop, T-Tiger Treats, U-Unity Candy, X-Xtra Candies
-•	Candy ID: C00, C01, C02, C03, C04, C05, C06, C07, C08, C09, C10
-•	Candy box size: L – Large, M – Medium, S-Small,  F – Fundraiser, X – Sample
-•	Candy type: SF – Sugar Free, SU – Sugar
+ *	Vendor ID: A-Atomic Sweets, B - Boston Sweets, N-Nellies Sweet Shop, T-Tiger Treats, U-Unity Candy, X-Xtra Candies
+ *	Candy ID: C00, C01, C02, C03, C04, C05, C06, C07, C08, C09, C10
+ *	Candy box size: L – Large, M – Medium, S-Small,  F – Fundraiser, X – Sample
+ *	Candy type: SF – Sugar Free, SU – Sugar
 
 Multi-level control breaks:
-•	Major: Warehouse ID
-•	Intermediate: Vendor ID
-•	Minor: Candy ID
+ *	Major: Warehouse ID
+ *	Intermediate: Vendor ID
+ *	Minor: Candy ID
 
   
