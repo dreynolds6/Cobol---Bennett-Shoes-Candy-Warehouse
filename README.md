@@ -21,62 +21,61 @@ If the warehouse id is not BHAM, HUNT, ANNI or MONT, DO NOT PROCESS it.  Write t
 Input File:
 
      01  MESS-RECORD.
-           05  MR-WAREHOUSE-ID              		PIC X(04).
-           05  MR-EMPLOYEE-ID               		PIC X(05).
-           05  MR-EMPLOYEE-POSITION         	  PIC X(02).
-           05  MR-EMPLOYEE-LAST-NAME        	  PIC X(10).
-           05  MR-EMPLOYEE-FIRST-NAME       	  PIC X(10).
-           05  MR-EMPLOYEE-MID-INITIAL      	  PIC X(01).
-           05                               		PIC X(02).
-           05  MR-HIRE-DATE                 		PIC 9(08).
-           05                               		PIC X(25).
-           05  MR-CURRENT-YEARLY-SALARY   	    PIC 9(06)V99.
-           05  MR-NUMBER-OF-DEPENDENTS      	  PIC 9(02).
-           05  MR-HEALTH-PLAN               		PIC X(01).
-           05  MR-HEALTH-INS-COST           		PIC 9(03).
-           05                               		PIC X(04).
-           05  MR-VENDOR-ID                 		PIC X(01).
-           05  MR-CANDY-ID                  		PIC X(03).
-           05  MR-CANDY-TABLE               		OCCURS 5 TIMES.
-               10  MR-CANDY-NAME            		PIC X(15).
-               10  MR-CANDY-BOX-SIZE        		PIC X(01).
-               10  MR-CANDY-TYPE            		PIC X(02).
-               10  MR-NBR-CASES-IN-STOCK    	  PIC S9(04).
-               10  MR-PURCHASE-PRICE        		PIC S9(03)V99.
+           05  MR-WAREHOUSE-ID             PIC X(04).
+           05  MR-EMPLOYEE-ID              PIC X(05).
+           05  MR-EMPLOYEE-POSITION        PIC X(02).
+           05  MR-EMPLOYEE-LAST-NAME       PIC X(10).
+           05  MR-EMPLOYEE-FIRST-NAME      PIC X(10).
+           05  MR-EMPLOYEE-MID-INITIAL     PIC X(01).
+           05                              PIC X(02).
+           05  MR-HIRE-DATE                PIC 9(08).
+           05                              PIC X(25).
+           05  MR-CURRENT-YEARLY-SALARY    PIC 9(06)V99.
+           05  MR-NUMBER-OF-DEPENDENTS     PIC 9(02).
+           05  MR-HEALTH-PLAN              PIC X(01).
+           05  MR-HEALTH-INS-COST          PIC 9(03).
+           05                              PIC X(04).
+           05  MR-VENDOR-ID                PIC X(01).
+           05  MR-CANDY-ID                 PIC X(03).
+           05  MR-CANDY-TABLE              OCCURS 5 TIMES.
+               10  MR-CANDY-NAME           PIC X(15).
+               10  MR-CANDY-BOX-SIZE       PIC X(01).
+               10  MR-CANDY-TYPE           PIC X(02).
+               10  MR-NBR-CASES-IN-STOCK   PIC S9(04).
+               10  MR-PURCHASE-PRICE       PIC S9(03)V99.
 
 Output Files:
 
      01  INVENTORY-RECORD.
-           05  IR-WAREHOUSE-ID              		PIC X(04).
-           05  IR-VENDOR-ID                 		PIC X(	01).
-           05  IR-CANDY-ID                  		PIC X(03).
-           05  IR-CANDY-TABLE       		        OCCURS 5 TIMES.
-               10  IR-CANDY-NAME            		PIC X(15).
-               10  IR-CAN	DY-BOX-SIZE   	     	PIC X(01).
-               10  IR-CANDY-TYPE            		PIC X(02).
-               10  IR-NBR-CASES-IN-STOCK    	  PIC 9(04).
-               10  IR-PURCHASE-PRICE        		PIC 9(03)V99.
+           05  IR-WAREHOUSE-ID             PIC X(04).
+           05  IR-VENDOR-ID                PIC X(	01).
+           05  IR-CANDY-ID                 PIC X(03).
+           05  IR-CANDY-TABLE              OCCURS 5 TIMES.
+               10  IR-CANDY-NAME           PIC X(15).
+               10  IR-CAN	DY-BOX-SIZE      PIC X(01).
+               10  IR-CANDY-TYPE           PIC X(02).
+               10  IR-NBR-CASES-IN-STOCK   PIC 9(04).
+               10  IR-PURCHASE-PRICE       PIC 9(03)V99.
 
        01  EMPLOYEE-RECORD.
-           05  ER-WAREHOUSE-ID              		PIC X(04).
-           05  ER-EMPLOYEE-ID               		PIC X(05).
-           05  ER-EMPLOYEE-POSITION     		    PIC X(01).
-           05  ER-EMPLOYEE-LAST-NAME 		        PIC X(10).
-           05  ER-EMPLOYEE-FIRST-NAME		        PIC X(10).
-           05  ER-EMPLOYEE-MID-INITIAL 		      PIC X(01).
-           05                               		PIC X(02).
-           05  ER-HIRE-DATE                 		PIC 9(08).
-           05                               		PIC X(25).
-           05  ER-CURRENT-YEARLY-SALARY     	  PIC 9(06)V99.
-           05  ER-NUMBER-OF-DEPENDENTS      	  PIC 9(02).
-           05  ER-HEALTH-PLAN               		PIC X(01).
-           05  ER-HEALTH-INS-COST           		PIC 9(03).
-           05                               		PIC X(04).
+           05  ER-WAREHOUSE-ID             PIC X(04).
+           05  ER-EMPLOYEE-ID              PIC X(05).
+           05  ER-EMPLOYEE-POSITION        PIC X(01).
+           05  ER-EMPLOYEE-LAST-NAME       PIC X(10).
+           05  ER-EMPLOYEE-FIRST-NAME      PIC X(10).
+           05  ER-EMPLOYEE-MID-INITIAL     PIC X(01).
+           05                              PIC X(02).
+           05  ER-HIRE-DATE                PIC 9(08).
+           05                              PIC X(25).
+           05  ER-CURRENT-YEARLY-SALARY    PIC 9(06)V99.
+           05  ER-NUMBER-OF-DEPENDENTS     PIC 9(02).
+           05  ER-HEALTH-PLAN              PIC X(01).
+           05  ER-HEALTH-INS-COST          PIC 9(03).
+           05                              PIC X(04).
 
 Next step is write a report program to sort the 4 unsorted warehouse files to create 4 sorted warehouse files: B100, B200, B300 and B400 any other values are invalid warehouses and skipped. Merge the 4 sorted files into one file to be used to write a report from the merged file showing warehouse inventory with totals by warehouse, vendor and candy along with grand total for all data.
 
 Sort Input:	All 4 unsorted files have the same file structure
-
   *	WAREHOUSE ID
   *	VENDOR ID
   *	CANDY ID
@@ -85,7 +84,6 @@ Sort Input:	All 4 unsorted files have the same file structure
 Sort Output:  Newly sorted file containing the data of all 4 unsorted input files.
 
 Inventory report:  Produces a listing of the file contents with sub-totals by below along with grand totals including details of candy data
-
   *	WAREHOUSE ID
   *	VENDOR ID
   *	CANDY ID
